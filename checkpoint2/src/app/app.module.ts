@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { SplashModule } from './splash/splash.module';
+import { WorldModule } from './world/world.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { SplashModule } from './splash/splash.module';
     SplashModule,
     SharedModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    WorldModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

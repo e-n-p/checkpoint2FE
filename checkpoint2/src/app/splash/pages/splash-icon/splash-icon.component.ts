@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { CaptainAccessorService } from '../../../shared/services/captain-accessor.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-splash-icon',
@@ -7,9 +6,5 @@ import { CaptainAccessorService } from '../../../shared/services/captain-accesso
   styleUrl: './splash-icon.component.css'
 })
 export class SplashIconComponent {
-
-  loadMap() {
-    
-  }
 
 }

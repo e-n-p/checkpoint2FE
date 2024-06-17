@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SplashRoutingModule } from './splash-routing.module';
 import { SplashIconComponent } from './pages/splash-icon/splash-icon.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     SplashRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   exports: [
     SplashIconComponent,

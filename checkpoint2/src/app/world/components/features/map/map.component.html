@@ -1,1 +1,10 @@
-<p>map works!</p>
+<h3>{{mapName$ | async}}</h3>
+<div class="gridContainer" *ngIf="mapRepresentation$ | async as grid">
+    <table>
+        <tr *ngFor="let row of grid; index as i">
+            <td *ngFor="let cell of row; index as j">
+                {{cell}}
+            </td>
+        </tr>
+    </table>
+</div>

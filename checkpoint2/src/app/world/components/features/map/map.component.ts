@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MapService } from '../../../services/map.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-map',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class MapComponent {
 
+  private mapService = inject(MapService);
+  mapName$: Observable<string> = this.mapService.getMapName();
+  mapRepresentation$: Observable<string[][]> = this.mapService.getWorldMap$();
+
+  //mouse over events
 }

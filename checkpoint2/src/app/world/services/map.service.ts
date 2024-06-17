@@ -7,14 +7,14 @@ import { EntitiesService } from '../../shared/services/entities.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MapService implements OnDestroy{
-  
+export class MapService implements OnDestroy {
+
   private mapService = inject(MapAccessorService);
   private entityService = inject(EntitiesService);
 
   private height!: number;
   private width!: number;
-  private worldMap!: string[][]; //make an extra dimension to store objects to pass to hover?
+  private worldMap!: string[][];
   private worldView$: BehaviorSubject<string[][]> = new BehaviorSubject<string[][]>([]);
   private mapName$: BehaviorSubject<string> = new BehaviorSubject<string>("");
 
@@ -25,8 +25,7 @@ export class MapService implements OnDestroy{
         this.width = mapObj.width;
         this.mapName$.next(mapObj.name);
         this.worldMap = this.createMap();
-        let map = mapObj.map;
-        this.drawMap(map);
+        this.drawMap(mapObj.map);
         this.populateMap();
         this.updateMapView(this.worldMap);
       }
@@ -50,23 +49,16 @@ export class MapService implements OnDestroy{
     }
   }
 
-  private populateMap(): void{
-    this.entityService.allBeds$.subscribe(
-      beds => {
-        for (let bed of beds){
-          let coOrds = bed.location.split(",");
-          this.worldMap[Number(coOrds[0])][Number(coOrds[1])] = "~"
-        }
+  private populateMap(): void {
+    for (let [k, v] of this.entityService.entityLocations) {
+      let representation: string = '';
+      if (v.hasOwnProperty('age')) {
+        representation = '~';
+      } else if (v.hasOwnProperty('price')) {
+        representation = 'H';
       }
-    );
-    this.entityService.allHuts$.subscribe(
-      huts => {
-        for(let hut of huts){
-          let coOrds = hut.location.split(",");
-          this.worldMap[Number(coOrds[0])][Number(coOrds[1])] = "H"
-        }
-      }
-    );
+      this.worldMap[k[0]][k[1]] = representation;
+    }
   }
 
   private updateMapView(newMap: string[][]): void {

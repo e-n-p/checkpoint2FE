@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { EntitiesService } from './shared/services/entities.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'checkpoint2';
+  title = 'OysterGame';
+
+  private entityService = inject(EntitiesService); //replace with guard
+
 }

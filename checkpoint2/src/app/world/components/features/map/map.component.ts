@@ -17,7 +17,8 @@ export class MapComponent {
   mapRepresentation$: Observable<string[][]> = this.mapService.getWorldMap$();
 
   hover(i: number, j: number){
-    let coOrds: CoOrdinate = [i,j];
+    // let coOrds: CoOrdinate = [i,j];
+    let coOrds: string = i+","+j;
     this.entityService.setHoverEntity(coOrds);
   }
 }

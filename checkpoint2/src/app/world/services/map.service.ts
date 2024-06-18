@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { MapAccessorService } from '../../shared/services/map-accessor.service';
 import { Map } from '../../shared/models/types/Map.type';
 import { EntitiesService } from '../../shared/services/entities.service';
+import { CoOrdinate } from '../../shared/models/types/co-ordinate.type';
 
 @Injectable({
   providedIn: 'root'
@@ -52,12 +53,13 @@ export class MapService implements OnDestroy {
   private populateMap(): void {
     for (let [k, v] of this.entityService.entityLocations) {
       let representation: string = '';
+      let coOrds: CoOrdinate = k.split(",").map(Number);
       if (v.hasOwnProperty('age')) {
         representation = '~';
       } else if (v.hasOwnProperty('price')) {
         representation = 'H';
       }
-      this.worldMap[k[0]][k[1]] = representation;
+      this.worldMap[coOrds[0]][coOrds[1]] = representation;
     }
   }
 

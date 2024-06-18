@@ -1,0 +1,35 @@
+/* undecided on the background of the tiles, currently set to
+   current background-color
+*/
+.tile{
+    background-color: #b18553; 
+}
+
+.sea{
+    color: blue;
+}
+
+.land{
+    color: darkgreen;
+}
+
+.mountain{
+    color: darkslategray;
+}
+
+.forest{
+    color: green;
+}
+
+.city{
+    color: darkgray;
+
+}
+
+.bed{
+    color: whitesmoke;
+}
+
+.hut{
+    color: brown;
+}

@@ -3,13 +3,7 @@ import { BoatAccessorService } from './boat-accessor.service';
 import { BedAccessorService } from './bed-accessor.service';
 import { HutAccessorService } from './hut-accessor.service';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Boat } from '../models/types/Boat.type';
-import { CoOrdinate } from '../models/types/co-ordinate.type';
-import { Bed } from '../models/types/Bed.type';
-import { Hut } from '../models/types/Hut.type';
 import { DisplayEntity } from '../models/types/DisplayEntity.type';
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +13,9 @@ export class EntitiesService {
   key: Map<string, string> = new Map<string, string>([
     ["+", "Land"],
     [".", "Sea"],
-    ["+", "Mountain"],
+    ["^", "Mountain"],
     ["#", "Forest"],
+    ["C", "City"],
   ]);
 
   // private boatService = inject(BoatAccessorService);

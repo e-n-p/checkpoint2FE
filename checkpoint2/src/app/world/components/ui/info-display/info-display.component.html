@@ -1,6 +1,6 @@
-<p>info-display works!</p>
+<h3>Info</h3>
 
-<div *ngIf="tileInfo$ | async as tileInfo">
+<div class="tool-tip" *ngIf="tileInfo$ | async as tileInfo">
     <div *ngFor="let info of transformDisplayEntity(tileInfo)">
         <p>{{info.key}} - {{info.value}}</p>
     </div>

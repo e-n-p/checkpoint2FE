@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0rem;
+}
+
+.app {
+    margin: 0rem;
+    padding: 0rem;
+    background-color: #b18553;
+    height: 100vh;
+    width: 100vw;
+}

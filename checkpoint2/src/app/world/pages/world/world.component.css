@@ -1,0 +1,15 @@
+.game-window {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    margin-inline: 15rem;
+
+    background-color: #b18553;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 0rem;
+    gap: 3rem;
+}

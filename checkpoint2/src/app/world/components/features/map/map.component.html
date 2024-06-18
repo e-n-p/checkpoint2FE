@@ -2,7 +2,10 @@
 <div class="gridContainer" *ngIf="mapRepresentation$ | async as grid">
     <table>
         <tr *ngFor="let row of grid; index as i">
-            <td *ngFor="let cell of row; index as j" (mouseover)="hover(i,j)">
+            <td *ngFor="let cell of row; index as j" 
+            (mouseover)="hover(i,j)"
+            [ngClass]="colorPicker(cell)"
+            >
                 {{cell}}
             </td>
         </tr>

@@ -5,11 +5,13 @@ import { SplashRoutingModule } from './splash-routing.module';
 import { SplashIconComponent } from './pages/splash-icon/splash-icon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { SplashElementsComponent } from './components/splash-elements/splash-elements.component';
 
 
 @NgModule({
   declarations: [
-    SplashIconComponent
+    SplashIconComponent,
+    SplashElementsComponent
   ],
   imports: [
     CommonModule,

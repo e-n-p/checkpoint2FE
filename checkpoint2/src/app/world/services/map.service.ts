@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { MapAccessorService } from '../../shared/services/map-accessor.service';
 import { Map } from '../../shared/models/types/Map.type';
 import { EntitiesService } from '../../shared/services/entities.service';
-import { CoOrdinate } from '../../shared/models/types/co-ordinate.type';
+import { CoOrdinate } from '../../shared/models/types/Co-ordinate.type';
 
 @Injectable({
   providedIn: 'root'

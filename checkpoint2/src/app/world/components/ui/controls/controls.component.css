@@ -5,4 +5,9 @@ p{
 
 .control{
     margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border: 1px blueviolet solid;
+    padding: 0.3rem;
 }

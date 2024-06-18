@@ -1,7 +1,7 @@
 <h3>Info</h3>
 
 <div class="tool-tip" *ngIf="tileInfo$ | async as tileInfo">
-    <div *ngFor="let info of transformDisplayEntity(tileInfo)">
+    <div *ngFor="let info of tileInfo | keyvalue">
         <p>{{info.key}} - {{info.value}}</p>
     </div>
 </div>

@@ -9,7 +9,7 @@
 
 .controls {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 5rem 0rem;
     gap: 3rem;
 }

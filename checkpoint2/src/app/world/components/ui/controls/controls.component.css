@@ -2,12 +2,24 @@ p{
     margin: 0rem;
 }
 
+img {
+    height: 100%;
+}
 
 .control{
-    margin: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    align-items: center;
+
+    margin: 1rem;
     border: 1px blueviolet solid;
     padding: 0.3rem;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
 }
